@@ -32,19 +32,19 @@ public class CurrentDepositMenu extends Element {
         chooseMenu("ВАЛЮТА");
 
         new WebDriverWait(webDriver, 15).until(ExpectedConditions.presenceOfElementLocated(By.className("SelectorDropDown__selector__list")));
-        List<WebElement> menuCurrency = webDriver.findElements(By.className("SelectorDropDown__selector__list"));
+        List<WebElement> menuCurrency = webDriver.findElements(By.className("SelectorDropDown__selector__list_elem_icon"));
 
         System.out.println("Quantity of Валюта " + menuCurrency.size() + menuCurrency.get(2).getText());
 
         switch (currencyCode) {
             case "EUR":
-                menuCurrency.get(1).click();
+                menuCurrency.get(0).click();
                 break;
             case "USD":
-                menuCurrency.get(2).click();
+                menuCurrency.get(1).click();
                 break;
             case "RUB":
-                menuCurrency.get(3).click();
+                menuCurrency.get(2).click();
                 break;
             default:
                 System.out.println("Currency not found");

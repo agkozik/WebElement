@@ -55,7 +55,7 @@ List<WebElement> reservItems = webDriver.findElements(By.className("value"));
             System.out.println("\t currentValue " + currentValue);
 
             actions.doubleClick(itemsCalc.get(0)).sendKeys(String.valueOf(currentValue)).build().perform();
-            //actions.doubleClick(reservItems.get(0)).sendKeys(String.valueOf(currentValue)).build().perform();//дублирование кода из-за перекрытия ползунком области клика
+            actions.doubleClick(reservItems.get(0)).sendKeys(String.valueOf(currentValue)).build().perform();//дублирование кода из-за перекрытия ползунком области клика
 
             new WebDriverWait(webDriver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='SimpleCalculator__result--income']/span")));
             actions.doubleClick(itemsCalc.get(1)).sendKeys(sum).build().perform();
