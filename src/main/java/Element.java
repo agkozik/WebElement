@@ -17,8 +17,6 @@ public  abstract class Element implements WebElement {
         this.webElement = webElement;
     }
 
-
-
     @Override
     public void click() {
         webElement.click();

@@ -15,11 +15,10 @@ public class DropDownMenu extends Element {
 
     public DropDownMenu(WebElement webElement, WebDriver driver) {
         super(webElement,driver);
-        new WebDriverWait(webDriver,10).until(ExpectedConditions.visibilityOfElementLocated(By.className("nav_category-drop-down")));
+        new WebDriverWait(webDriver,30).until(ExpectedConditions.visibilityOfElementLocated(By.className("nav_category-drop-down")));
         this.webElement= webElement.findElement(By.className("nav_category-drop-down"));
         headers= this.webElement.findElements(By.className("nav__item_level-0"));
     }
-
 
     public WebElement clickToHeader(String headerText){
         for (WebElement el :headers ) {
