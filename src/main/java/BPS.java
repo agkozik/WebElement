@@ -10,13 +10,9 @@ import java.util.List;
 public class BPS {
 
     public static void main(String[] arg) throws InterruptedException {
-
         //System.setProperty("webdriver.chrome.driver","Z:\\QA\\sel\\src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        //Dimension d = new Dimension(1024,1080);
-       // driver.manage().window().setSize(d);
         driver.manage().window().maximize();
-
         driver.get("https://www.bps-sberbank.by");
         firsTest(driver);
         Thread.sleep(2000);
@@ -36,6 +32,7 @@ public class BPS {
         currentDepositMenu.ChangeCurrency("USD");
 
         SimpleCalculator simpleCalculator = new SimpleCalculator(driver.findElement(By.id("app")), driver);
+        simpleCalculator.useDepositCalculatorBinary(100,"10000");
         simpleCalculator.useDepositCalculator(100,"10000");
 
         System.out.println("sdf");
